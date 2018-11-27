@@ -1,0 +1,125 @@
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+
+body{
+  padding:0 100px 100px;
+  background-color: #CDE; 
+}
+
+h1#header{
+  text-align: center;
+  padding:50px;
+  font-size: 62px;
+  font-family: "Pacifico";
+  @include text-shadow(0 2px 2px darken($bg,40%));
+}
+
+.article-wrapper{
+  @include transition(width .4s);
+}
+
+article{
+  position:relative;
+  padding-left: 180px;
+  padding-right: 75px;
+  height: 150px;
+  margin-bottom: 30px;
+  background-color: #FFF;
+  @include border-radius($size);
+  cursor:pointer;
+  
+  .img-wrapper{
+    position: absolute;
+    top:- 10px;
+    left:-10px;
+    @include border-radius(100px);
+    background-color: #CDE;
+    padding:10px;
+    z-index: 1000;
+    @include transition(all .2s);
+    
+    img{
+      @include border-radius(100px);
+      @include transition(all .2s);
+      width: 150px
+    }
+  }
+  
+  h1{
+    height: 75px;
+    line-height: 75px;
+    font-size: 24px;
+    border-bottom: 2px solid #CDE;
+    color: #428bca;
+    @include transition(all .4s);
+  }
+  p{
+    color: #888;
+  }
+  a{
+    position:absolute;
+    display:block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    line-height: 150px;
+    text-align: center;
+    width: 100%;
+    background-color: #FFF;
+    font-size: 48px;
+    font-style:italic;
+    opacity:0;
+    color: #428bca !important;
+    @include transition(all .4s);
+    text-decoration: none !important;
+    @include border-radius($size);
+    font-family: "Pacifico";
+    @include text-shadow(0 1px 1px #AAA);
+  }
+   &:hover{
+    .img-wrapper{
+      padding:5px;
+      @include transform(rotate(5deg));
+      img{
+        width: 160px;
+      }
+    }
+    a{
+      opacity:1;
+    }
+  }
+}
+
+.bloc{
+  article{
+    padding:10px;
+    height: 225px;
+    @include border-radius(3px);
+    margin-top: 75px;
+    
+    .img-wrapper{
+      position: relative;
+      top:-85px;
+      width: 170px;
+      left:inherit;
+      margin: auto;
+      margin-bottom: -200px;
+    }
+    
+    h1{
+      font-size: 14px;
+      height: 37px;
+      line-height: 37px;
+    }
+    
+    p{
+      font-size: 12px;
+    }
+    
+    a{
+       @include border-radius(3px);
+       line-height: 255px;
+    }
+  }
+}
